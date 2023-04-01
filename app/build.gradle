@@ -33,6 +33,7 @@ android {
 
 dependencies {
     implementation project(":weaponslist")
+    implementation project(":weapondetails")
 
     //DI Koin
     implementation "io.insert-koin:koin-core:3.4.0"

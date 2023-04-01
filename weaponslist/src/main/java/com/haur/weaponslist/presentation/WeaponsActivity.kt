@@ -1,5 +1,8 @@
 package com.haur.weaponslist.presentation
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -40,10 +43,24 @@ class WeaponsActivity : AppCompatActivity() {
     }
 
     private fun setupWeaponsRecyclerView() {
+        weaponsAdapter.setOnWeaponClicked { navigateToDetails(it) }
         recyclerWeapons = findViewById(R.id.recyclerWeapons)
         recyclerWeapons.apply {
             adapter = weaponsAdapter
             layoutManager = LinearLayoutManager(this@WeaponsActivity)
         }
+    }
+
+    private fun navigateToDetails(uuid: String){
+        val uri = Uri.parse(WEAPON_DETAILS_DEEPLINK)
+        val intent = Intent(Intent.ACTION_VIEW, uri).apply {
+            putExtra(WEAPON_UUID, uuid)
+        }
+        startActivity(intent)
+    }
+
+    companion object {
+        const val WEAPON_DETAILS_DEEPLINK = "valorapp://weapondetails"
+        const val WEAPON_UUID = "weapon_uuid"
     }
 }
