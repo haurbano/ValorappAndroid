@@ -16,3 +16,4 @@ rootProject.name = "ValorApp"
 include ':app'
 include ':app:weaponslist'
 include ':weaponslist'
+include ':weapondetails'
