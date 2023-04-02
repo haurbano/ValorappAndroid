@@ -14,6 +14,5 @@ class WeaponDetailsActivity : AppCompatActivity() {
         uuid?.let {
             findViewById<TextView>(R.id.textView).text = it
         }
-
     }
 }
