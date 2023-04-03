@@ -12,9 +12,9 @@ class WeaponDetailsRepositoryImpl(
             WeaponDetails(
                 uuid = uuid,
                 name = displayName,
-                fireRate = weaponStats.fireRate ?: 0f,
-                cost = shopData.cost,
-                category = shopData.categoryText,
+                fireRate = weaponStats?.fireRate ?: 0f,
+                cost = shopData?.cost ?: 0,
+                category = shopData?.categoryText ?: "No Category",
                 skins= skins?.map { WeaponDetails.Skin(it.displayIcon, it.displayName) }
             )
         }

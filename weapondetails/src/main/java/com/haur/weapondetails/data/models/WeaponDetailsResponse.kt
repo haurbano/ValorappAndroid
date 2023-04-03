@@ -7,8 +7,8 @@ data class WeaponDetailsResponse(
     data class Weapon(
         val uuid: String,
         val displayName: String,
-        val weaponStats: WeaponStats,
-        val shopData: ShopData,
+        val weaponStats: WeaponStats?,
+        val shopData: ShopData?,
         val skins: List<Skin>?
     ){
         data class WeaponStats(
