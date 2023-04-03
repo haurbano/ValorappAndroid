@@ -78,7 +78,7 @@ class WeaponDetailsActivity : AppCompatActivity() {
             skinsAdapter.updateData(skins)
 
             fireRateTV.text = "Fire Rate: $fireRate"
-            costTV.text = "Cost: $cost"
+            costTV.text = "Cost: $$cost"
             categoryTV.text = "Category: $category"
             nameTv.text = name
         }
