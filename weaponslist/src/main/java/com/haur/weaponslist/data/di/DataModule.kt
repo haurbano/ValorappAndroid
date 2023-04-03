@@ -6,7 +6,7 @@ import com.haur.weaponslist.data.repositories.WeaponsRepositoryImpl
 import com.haur.weaponslist.domain.repositories.WeaponsRepository
 import org.koin.dsl.module
 
-val dataModule = module {
+internal val dataModule = module {
     single { RetrofitClient }
     single { get<RetrofitClient>().create(WeaponsListDataSource::class.java) }
     factory<WeaponsRepository> { WeaponsRepositoryImpl(get()) }
